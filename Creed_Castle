@@ -1,0 +1,32 @@
+/*
+Creed_Castle
+*/
+
+void setup() {
+  size(500,500):
+  background(200);
+  noStroke();
+}
+
+void draw() {
+ if (keyPressed == C) {
+ Castle()
+}
+}
+
+void Castle(int x, int y) {
+ 
+ //Main-Body
+  fill(#888c8d);
+  rect(x-150,y-100,150,200);
+  rect(x-50,y,100,100);
+  rect(x+50,y-100,150,200);
+
+//Roof-Segments
+  fill(#800000);
+  triangle(x-50,y-50,x-50,y,x,y);
+  triangle(x+50,y-50,x+50,y,x,y);
+  triangle(x-50,y-100,x-100,y-150,x-150,y-100);
+  triangle(x+50,y-100,x+100,y-150,x+150,y-100);
+}
+  
