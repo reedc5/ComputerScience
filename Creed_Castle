@@ -9,16 +9,30 @@ void setup() {
 }
 
 void draw() {
+  float a;
+  a = (random(1,100));
   {
- Castle(random(1,500),random(1,500));
+    if (a < 50) {
+      Castle(random(1,500),random(1,500));
+    }
+    else if (a > 50) {
+      AntiCastle(random(1,500),random(1,500));
   }
   if (key == CODED) {
    if (keyCode == UP) {
      if (keyPressed == true)
      Castle(mouseX,mouseY);
    }
- }
+  }
+   if (key ==CODED) {
+     if (keyCode == DOWN) {
+       if(keyPressed == true)
+       AntiCastle(mouseX,mouseY);
+     }
+   }
+  }
 }
+
 
 void Castle(float x, float y) {
   //Main-Body
@@ -39,6 +53,29 @@ void Castle(float x, float y) {
   
   //Windows
   fill(#e1ebe3);
+  rect(x-130,y-75,60,100);
+  rect(x+70,y-75,60,100);
+}
+
+void AntiCastle(float x, float y) {
+  //Main-Body
+  fill(#777372);
+  rect(x-150,y-100,100,200);
+  rect(x-50,y,100,100);
+  rect(x+50,y-100,100,200);
+  
+  //Roof-Segments
+  fill(#7fffff);
+  triangle(x-50,y-50,x-50,y,x,y);
+  triangle(x+50,y-50,x+50,y,x,y);
+  triangle(x-50,y-100,x-100,y-150,x-150,y-100);
+  triangle(x+50,y-100,x+100,y-150,x+150,y-100);
+  
+  //Door
+  rect(x-25,y+40,50,60);
+  
+  //Windows
+  fill(#1e141c);
   rect(x-130,y-75,60,100);
   rect(x+70,y-75,60,100);
 }
