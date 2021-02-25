@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class Program {
+	public static void main(String[] args) {
+		
+		char x = 'A';
+		int value = 0;
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Addition or Subtraction?");
+		String userinput = input.nextLine();
+		
+		//Detects whether or not the value will be positive or negative.
+		if(userinput.equals("Addition")) {
+			value++;
+		}	else if(userinput.equals("addition")) {
+			value++;
+		}	else if(userinput.equals("Subtraction")) {
+			value--;
+		}	else if(userinput.equals("subtraction")) {
+			value--;
+		}	else {
+			System.out.println("Invalid Prompt");
+		}
+		
+
+		//
+		if(value > 0) {
+			System.out.println("Adding");
+			System.out.println("Enter Value:");
+			
+			Scanner inputadd = new Scanner(System.in);
+			int userinputadd = inputadd.nextInt();
+			
+			while(x < x + userinputadd + 1) {
+				x++;
+				System.out.println(x);
+			}
+			
+		} else if(value < 0) {
+			System.out.println("Subtracting");
+			System.out.println("Enter Value:");
+			
+			Scanner inputsub = new Scanner(System.in);
+			int userinputsub = inputsub.nextInt();
+			
+			while(x > x - userinputsub - 1) {
+				x--;
+				System.out.println(x);
+			}
+			
+		}
+		
+	}
+}
+	
